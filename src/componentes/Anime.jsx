@@ -1,5 +1,4 @@
 import { View,Text,Image,TouchableHighlight,StyleSheet,Pressable } from "react-native";
-import { ImageBackground } from "react-native-web";
 import { router, useRouter } from "expo-router";
 
 const Anime=({datos})=>{
@@ -8,25 +7,29 @@ const Anime=({datos})=>{
         router.push({
             pathname:'/InfoAnime',
             params:{
-                id:datos.mal_id,
-                nombre:datos.title,
-                transmi:datos.type,
-                origen:datos.source,
-                capitulos:datos.episodes,
-                estatus:datos.status,
-                duracion:datos.duration,
-                calificacion:datos.score,
-                
-                   
+                id: datos.mal_id,
+                nombre: datos.title,
+                transmi: datos.type,
+                origen: datos.source,
+                capitulos: datos.episodes,
+                estatus: datos.status,
+                duracion: datos.duration,
+                puntuacion: datos.score,
+                audiencia: datos.rating,
+                imagen: datos.images.webp.large_image_url || datos.images.jpg.large_image_url,
+                descripcion: datos.synopsis,
+                video: datos.trailer.url || datos.trailer.embed_url || ''
             }
         })
     }
     return(
         <Pressable style={styles.contenedor} onPress={()=> cambioVista()}>
             <Image style={styles.img} source={{uri : datos.images.webp.large_image_url}}/>
-            <Text>{datos.title}</Text>
-            <Text>{datos.type}</Text>
-            <Text>{datos.score}</Text>
+            <View style={{ flex: 1 }}>
+                <Text>{datos.title}</Text>
+                <Text>{datos.type}</Text>
+                <Text>{datos.score}</Text>
+            </View>
         </Pressable>
     )
 }

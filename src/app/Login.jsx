@@ -1,4 +1,5 @@
-import { View, Text, TouchableHighlight, StyleSheet } from "react-native";
+import { useState } from "react";
+import { View, Text, TextInput, TouchableHighlight, StyleSheet } from "react-native";
 import { EstilosGeneral } from "../styles";
 import { useRouter } from "expo-router";
 
@@ -7,7 +8,7 @@ const Login = () => {
     return (
         <View style={styles.container}>
             <TouchableHighlight style={styles.btn} onPress={() => router.back()}>
-                <Text>Regresar</Text>
+                <Text style={styles.textoBtn}>Regresar</Text>
             </TouchableHighlight>
         </View>
     );

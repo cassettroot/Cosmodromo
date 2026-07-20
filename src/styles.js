@@ -1,6 +1,9 @@
 const EstilosGeneral = {
     container: {
         flexGrow: 1,
+        backgroundColor: '#fafbf9',
+        alignItems: 'center',
+        justifyContent: 'center',
         padding: 20,
     },
     center: {
@@ -50,9 +53,11 @@ const EstilosGeneral = {
         marginTop: 20
     },
     titulo: {
-        fontSize: 20,
+        fontSize: 25,
         color: '#fff',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        marginBottom: 15,
+        textAlign: 'center',
     },
     artista: {
         fontSize: 15,
@@ -123,52 +128,35 @@ const EstilosGeneral = {
         fontSize: 12,
         color: '#ffffff80',
         marginTop: 2,
-    },  
-
-//hola xd
-
-  container: {
-    flex: 1,
-    backgroundColor: '#607538',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: '#fff',
-  },
-
-  titulo:{
-    color:'#fff',
-    fontSize:25,
-    fontWeight:'bold'
-
-  },
-  btn:{
-    width:'35%',
-    alignContent:'center',
-    alignItems:'center',
-    justifyContent:'center',
-    backgroundColor:'#263a82',
-    padding:10,
-    borderColor:'#fff',
-    borderRadius:30
-  },
-
-  input:{
-    width:60,
-    alignContent:'center',
-    justifyContent:'center',
-    backgroundColor:'#fff',
-    color:'#000000',
-    padding:10,
-    borderRadius:10,
-    marginBottom:10,
-    borderColor:'#422929'
-  }
-
+    },
+    btn: {
+        width: '45%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#f89900',
+        padding: 12,
+        borderColor: '#fff',
+        borderRadius: 30,
+        marginTop: 10,
+    },
+    textoBtn: {
+        color: '#ffffff',
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
+    input: {
+        width: '85%',
+        backgroundColor: '#fff',
+        color: '#000000',
+        padding: 12,
+        borderRadius: 10,
+        marginBottom: 12,
+        borderColor: '#422929',
+        borderWidth: 1,
+        fontSize: 16,
+    }
 };
 
-const EstilosLogin = {
-
-};
-
+const EstilosLogin = {};
 
 export { EstilosGeneral, EstilosLogin };

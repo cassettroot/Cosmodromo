@@ -6,8 +6,6 @@ import { useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
 import Anime from '../componentes/Anime.jsx';
 
-//npm install react-dom@19.1.0
-
 const index =() => {
   const router = useRouter();
   const [contenido,setContenido] = useState([]);
@@ -16,7 +14,7 @@ const index =() => {
     .then(respuesta => respuesta.json())
     .then(respuesta => {
       const anime =[];
-      respuesta.data.map(({mal_id,title,type,source,episodes,status,duration,score,rating,images,trailer})=>{
+      respuesta.data.map(({mal_id,title,type,source,episodes,status,duration,score,rating,images,trailer,synopsis})=>{
         anime.push({
           mal_id:mal_id,
           title:title,
@@ -28,7 +26,8 @@ const index =() => {
           score:score,
           rating:rating,
           images:images,
-          trailer:trailer
+          trailer:trailer,
+          synopsis:synopsis
         });
       });
       setContenido(anime)
@@ -36,21 +35,21 @@ const index =() => {
   },[]);
 
   return (
-    <ScrollView contentContainerStyle = {[styles.container,{backgroundColor:'#0000'}]}>
+    <ScrollView contentContainerStyle = {[styles.container,{backgroundColor:'#d0bebe00'}]}>
       <StatusBar  style='auto'/>
       <Grid>
         <Row>
-          <Col>
-            <ScrollView>
+          <Col style={{ width: '100%' }}>
+            <View style={{ width: '100%' }}>
             { contenido.map((datos,i) => <Anime key={i} datos={datos}/>)}
-            </ScrollView>
-            <TouchableHighlight   style={styles.btn} onPress={()=> router.navigate("/Login")}>
-              <Text > Login </Text>
+            </View>
+            <TouchableHighlight style={styles.btn} onPress={()=> router.navigate("/Login")}>
+              <Text style={styles.textoBtn}> Login </Text>
             </TouchableHighlight>
           </Col>
         </Row>
       </Grid>
-    </ScrollView>
+    </ScrollView> 
   );
 }
 
