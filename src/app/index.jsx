@@ -4,7 +4,7 @@ import { StyleSheet, Text, TouchableHighlight, View, ScrollView} from 'react-nat
 import { EstilosGeneral } from '../styles.js';
 import { useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
-import {anime} from '../componentes/Anime.jsx';
+import Anime from '../componentes/Anime.jsx';
 
 //npm install react-dom@19.1.0
 
@@ -44,8 +44,8 @@ const index =() => {
             <ScrollView>
             { contenido.map((datos,i) => <Anime key={i} datos={datos}/>)}
             </ScrollView>
-            <TouchableHighlight  style={styles.btn} onPress={()=> router.navigate("/Login")}>
-              <Text> Login </Text>
+            <TouchableHighlight   style={styles.btn} onPress={()=> router.navigate("/Login")}>
+              <Text > Login </Text>
             </TouchableHighlight>
           </Col>
         </Row>

@@ -142,14 +142,14 @@ const EstilosGeneral = {
 
   },
   btn:{
-    width:'25%',
+    width:'35%',
     alignContent:'center',
     alignItems:'center',
     justifyContent:'center',
-    backgroundColor:'#4d2b1e',
+    backgroundColor:'#263a82',
     padding:10,
     borderColor:'#fff',
-    borderRadius:8,
+    borderRadius:30
   },
 
   input:{
