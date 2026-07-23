@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, Image, ScrollView, StyleSheet, Linking, TouchableHighlight } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
 
@@ -9,6 +9,12 @@ const InfoAnime = () => {
     const [traducido, setTraducido] = useState(false);
     const [descTraducida, setDescTraducida] = useState('');
     const [cargando, setCargando] = useState(false);
+
+    useEffect(() => {
+        setTraducido(false);
+        setDescTraducida('');
+        setCargando(false);
+    }, [id, descripcion]);
 
     const dicEstatus = {
         'Finished Airing': 'Finalizado',
